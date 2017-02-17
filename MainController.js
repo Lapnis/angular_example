@@ -14,7 +14,12 @@
         var decreaseCount = function() {
             $scope.countdown -= 1;
             if ($scope.countdown < 1) {
-                $scope.search($scope.username);
+                if ($scope.username) {
+                    $scope.search($scope.username);
+                }else{
+                    $scope.countdown = 10;
+                    startCountdown();
+                }
             }
         };
 

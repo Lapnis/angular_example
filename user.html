@@ -20,26 +20,31 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col-md-offset-2 col-md-8">
-        <table class="table table-bordered table-striped table-hover" ng-show="repos">
-            <thead>
-                <tr>
-                    <th class="text-center" ng-click="orderBy('name')" ng-style="{cursor: 'pointer'}">Name</th>
-                    <th class="text-center" ng-click="orderBy('stargazers_count')" ng-style="{cursor: 'pointer'}">Stars</th>
-                    <th class="text-center" ng-click="orderBy('language')" ng-style="{cursor: 'pointer'}">Language</th>
-                    <th class="text-center">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="repo in repos | orderBy:reposOrder">
-                    <td class="text-center">{{repo.name}}</td>
-                    <td class="text-center">{{repo.stargazers_count | number:3}}</td>
-                    <td class="text-center">{{repo.language}}</td>
-                    <td class="text-center">
-                        <button class="btn btn-primary" type="button" ng-click="goToRepo(repo.name)" ng-data="repo.name">See More</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="row text-center">
+        <h4>Repositories</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <table class="table table-bordered table-striped table-hover" ng-show="repos">
+                <thead>
+                    <tr>
+                        <th class="text-center" ng-click="orderBy('name')" ng-style="{cursor: 'pointer'}">Name</th>
+                        <th class="text-center" ng-click="orderBy('stargazers_count')" ng-style="{cursor: 'pointer'}">Stars</th>
+                        <th class="text-center" ng-click="orderBy('language')" ng-style="{cursor: 'pointer'}">Language</th>
+                        <th class="text-center">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="repo in repos | orderBy:reposOrder">
+                        <td class="text-center">{{repo.name}}</td>
+                        <td class="text-center">{{repo.stargazers_count | number:3}}</td>
+                        <td class="text-center">{{repo.language}}</td>
+                        <td class="text-center">
+                            <button class="btn btn-primary" type="button" ng-click="goToRepo(repo.name)" ng-data="repo.name">See More</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

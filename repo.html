@@ -1,12 +1,11 @@
 <div class="row">
     <div class="col-md-1 pull-right">
-        <button class="btn btn-default" ng-click="back('/user/'+username)">Back</button>
+        <button class="btn btn-default" ng-click="back('/user/'+username)">Back to user</button>
     </div>
 </div>
 <div class="row">
     <div class="col-md-offset-2 col-md-8">
         <h3><strong>Name:</strong> <a href="{{repo.html_url}}" target="__blank">{{repo.name}}</a></h3>
-        <h3><strong>Owner:</strong> <a href="{{repo.owner.html_url}}">{{repo.owner.login}}</a></h3>
         <h3><strong>Private:</strong> <span ng-show="repo.private">Yes</span><span ng-hide="repo.private">No</span></h3>
         <h3><strong>Description:</strong> {{repo.description}}</h3>
     </div>
@@ -21,7 +20,7 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center" >Avatar</th>
+                        <th class="text-center">Avatar</th>
                         <th class="text-center" ng-click="orderBy('login')" ng-style="{cursor: 'pointer'}">Username</th>
                         <th class="text-center" ng-click="orderBy('contributions')" ng-style="{cursor: 'pointer'}">Contributions</th>
                     </tr>
@@ -29,7 +28,7 @@
                 <tbody>
                     <tr ng-repeat="collab in collabs | orderBy:collabsOrder">
                         <td class="text-center"><img class="img-thumbnail" ng-style="{width:'40px'}" src="{{collab.avatar_url}}" alt="{{collab.login}}"></td>
-                        <td class="text-center"><a href="{{collab.html_url}}" target="__blank">{{collab.login}}</a></td>
+                        <td class="text-center"><a href="#!/user/{{collab.login}}">{{collab.login}}</a></td>
                         <td class="text-center">{{collab.contributions}}</td>
                     </tr>
                 </tbody>

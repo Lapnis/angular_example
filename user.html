@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-1 pull-right">
-        <button class="btn btn-default" ng-click="back('/main')">Back</button>
+        <button class="btn btn-default" ng-click="back('/main')">Back to search</button>
     </div>
 </div>
 <div class="row">
@@ -27,7 +27,7 @@
                     <th class="text-center" ng-click="orderBy('name')" ng-style="{cursor: 'pointer'}">Name</th>
                     <th class="text-center" ng-click="orderBy('stargazers_count')" ng-style="{cursor: 'pointer'}">Stars</th>
                     <th class="text-center" ng-click="orderBy('language')" ng-style="{cursor: 'pointer'}">Language</th>
-                    <th class="text-center">Url</th>
+                    <th class="text-center">Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +36,7 @@
                     <td class="text-center">{{repo.stargazers_count | number:3}}</td>
                     <td class="text-center">{{repo.language}}</td>
                     <td class="text-center">
-                        <button class="btn btn-primary" type="button" ng-click="goToRepo(repo.name)" ng-data="repo.name">Go to Repo</button>
+                        <button class="btn btn-primary" type="button" ng-click="goToRepo(repo.name)" ng-data="repo.name">See More</button>
                     </td>
                 </tr>
             </tbody>

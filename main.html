@@ -1,0 +1,17 @@
+<div class="text-center">
+    <div>
+        <div ng-show="counter">
+            (Searching in: {{countdown}})
+        </div>
+    </div>
+    <form class="form-inline" name="searchUser" ng-submit="search(username)">
+        <div class="form-group">
+            <label class="sr-only" for="username">Github User</label>
+            <div class="input-group">
+                <div class="input-group-addon">Github User</div>
+                <input class="form-control" type="search" id="username" required="" placeholder="username" ng-model="username" />
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" value="search">Search</button>
+    </form>
+</div>
